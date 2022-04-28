@@ -203,7 +203,7 @@ resource "oci_load_balancer_backend_set" "tcb-lb-backset" {
 resource "oci_load_balancer_backend" "tcb-lb-backend1" {
   load_balancer_id = oci_load_balancer.tcb-lb.id
   backendset_name  = oci_load_balancer_backend_set.tcb-lb-backset.name
-  ip_address       = oci_core_instance.webserver01.private_ip
+  ip_address       = oci_core_instance.webserver1.private_ip
   port             = 80
   backup           = false
   drain            = false
@@ -214,7 +214,7 @@ resource "oci_load_balancer_backend" "tcb-lb-backend1" {
 resource "oci_load_balancer_backend" "tcb-lb-backend2" {
   load_balancer_id = oci_load_balancer.tcb-lb.id
   backendset_name  = oci_load_balancer_backend_set.tcb-lb-backset.name
-  ip_address       = oci_core_instance.webserver02.private_ip
+  ip_address       = oci_core_instance.webserver2.private_ip
   port             = 80
   backup           = false
   drain            = false
